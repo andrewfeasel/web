@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+}
+.ui{
+    font-family: monospace;
+    font-size: 14px;
+}
+#file{
+    width:88px;
+}
+#consoleUI{
+    overflow:auto;
+    padding: 6px;
+    width:99%;
+    border: solid 1px black;
+    max-height:384px;
+    min-height:384px;
+    margin:left;
+    background:#FFFFFF;
+    color:#000000;
+}
+#input{
+    display:none;
+}
+.white{
+    color: white;
+}
