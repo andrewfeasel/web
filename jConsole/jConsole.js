@@ -1,5 +1,5 @@
 document.onload = start();
-document.addEventListener('error', jConsole.logError, false);
+document.addEventListener('error', jConsole.logError(), false);
 const $ = (x) => document.getElementById(x);
 function start(){
     $('logger').onclick = jConsole.log($('input').value);
