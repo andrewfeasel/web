@@ -1,5 +1,9 @@
+document.addEventListener('load',start,false);
+document.addEventListener('error', jConsole.logError, false);
 const $ = (x) => document.getElementById(x);
 function start(){
+    const logger = $('logger');
+    logger.addEventListener('click',jConsole.log(logger.value),false);
     const myCodeMirror = CodeMirror.fromTextArea($('code'), {
         mode: 'javascript',
         indentUnit: 4,
@@ -38,13 +42,9 @@ function start(){
 }
 const jConsole = {
     log(x) {
-        try {
-            const console = $("consoleUI");
-            console.innerHTML += JSON.stringify(x, null, 2) + '<br>';
-            console.scrollTop = console.scrollHeight;
-        } catch (e) {
-            this.logError(e);
-        }
+        const console = $("consoleUI");
+        console.innerHTML += JSON.stringify(x, null, 2) + '<br>';
+        console.scrollTop = console.scrollHeight;
     },
     clear() {
         const console = $("consoleUI");
@@ -52,18 +52,14 @@ const jConsole = {
         console.scrollTop = consoleElement.scrollHeight;
     },
     logError(error) {
-        this.log(`${error.name}; ${error.message}.`);
+        this.log(`${error.name}: ${error.message}.`);
     },
     eval() {
-        try {
-            const input = $('input');
-            if (input.value === '') {
-                throw new ReferenceError('No code');
-            }
-            eval(input.value);
-        } catch (e) {
-            this.logError(e);
+        const input = $('input');
+        if (input.value === '') {
+            throw new ReferenceError('No code');
         }
+        eval(input.value);
     }
 };
 function getProtocol(url) {
