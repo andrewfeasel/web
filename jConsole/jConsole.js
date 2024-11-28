@@ -1,4 +1,4 @@
-document.addEventListener('load',start,false);
+document.onload = start();
 document.addEventListener('error', jConsole.logError, false);
 const $ = (x) => document.getElementById(x);
 function start(){
