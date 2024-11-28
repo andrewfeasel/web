@@ -8,14 +8,14 @@
     <link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
     <link rel = 'stylesheet' type = 'text/css' href = 'codemirror.css'>
 </head>
-<body>
+<body onload = 'start()'>
     <a class = 'white ui' href = '../index.html'><strong>Home</strong></a>
     <br>
     <strong style = 'font-size:18px' class = 'white ui'>jConsole</strong>
     <div>
         <input class = 'ui' type = "file" id = "file" accept="text/javascript, text/css, text/html, text/plain">
         <button class = 'ui' onclick ='jConsole.eval();'>Run JavaScript Code</button>
-        <button class = 'ui' id = 'logger'>Log Text</button>
+        <button class = 'ui' onclick="jConsole.log($('input').value)">Log Text</button>
     </div>
     <div>
 	<textarea id='input' autocorrect = 'false'></textarea>

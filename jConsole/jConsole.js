@@ -1,8 +1,5 @@
-document.onload = start();
-document.addEventListener('error', jConsole.logError(), false);
 const $ = (x) => document.getElementById(x);
 function start(){
-    $('logger').onclick = jConsole.log($('input').value);
     const myCodeMirror = CodeMirror.fromTextArea($('code'), {
         mode: 'javascript',
         indentUnit: 4,
