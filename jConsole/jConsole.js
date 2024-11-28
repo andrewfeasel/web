@@ -2,8 +2,7 @@ document.addEventListener('load',start,false);
 document.addEventListener('error', jConsole.logError, false);
 const $ = (x) => document.getElementById(x);
 function start(){
-    const logger = $('logger');
-    logger.addEventListener('click',jConsole.log(logger.value),false);
+    $('logger').onclick = jConsole.log($('input').value);
     const myCodeMirror = CodeMirror.fromTextArea($('code'), {
         mode: 'javascript',
         indentUnit: 4,
