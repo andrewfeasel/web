@@ -38,9 +38,13 @@ function start(){
 }
 const jConsole = {
     log(x) {
-        const console = $("consoleUI");
-        console.innerHTML += JSON.stringify(x, null, 2) + '<br>';
-        console.scrollTop = console.scrollHeight;
+        try {
+            const console = $("consoleUI");
+            console.innerHTML += JSON.stringify(x, null, 2) + '<br>';
+            console.scrollTop = console.scrollHeight;
+        } catch (error) {
+            this.logError(error);   
+        }
     },
     clear() {
         const console = $("consoleUI");
