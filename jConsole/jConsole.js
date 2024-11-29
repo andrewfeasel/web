@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     };
     const evalButton = $("evalButton");
     evalButton.onclick = () => {
-        jConsole.eval($("input").value);
+        eval($("input").value);
     };
     const clearButton = $("clearButton");
     clearButton.onclick = () => {
@@ -69,13 +69,6 @@ const jConsole = {
     },
     logError(error) {
         this.log(`${error.name}: ${error.message}.`);
-    },
-    eval(x) {
-        if (x === '') {
-            throw new ReferenceError('No code');
-        }else{
-            eval(x);
-        }
     }
 };
 function getProtocol(url) {
