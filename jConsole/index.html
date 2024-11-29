@@ -15,7 +15,7 @@
     <div>
         <input class = 'ui' type = "file" id = "file" accept="text/javascript, text/css, text/html, text/plain">
         <button class = 'ui' onclick ='jConsole.eval();'>Run JavaScript Code</button>
-        <button class = 'ui' onclick="jConsole.log($('input').value)">Log Text</button>
+        <button class = 'ui' id = 'logger'>Log Text</button>
     </div>
     <div>
 	<textarea id='input' autocorrect = 'false'></textarea>
