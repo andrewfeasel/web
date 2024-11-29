@@ -1,14 +1,13 @@
 const $ = (x) => document.getElementById(x);
 document.addEventListener("DOMContentLoaded", (event) => {
     try{
-        const input = $('input').value;
         const logButton = $("logButton");
         logButton.onclick = () => {
-            jConsole.log(input);
+            jConsole.log($('input').value);
         };
         const evalButton = $("evalButton");
         evalButton.onclick = () => {
-            eval(input);
+            eval($('input').value);
         };
         const clearButton = $("clearButton");
         clearButton.onclick = () => {
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         });
         myCodeMirror.on("change", (e) =>
-            input = myCodeMirror.getValue()
+            $('input').value = myCodeMirror.getValue()
         );
         const fileInput = $('file');
         fileInput.addEventListener("change", async () => {
@@ -66,7 +65,7 @@ const jConsole = {
     clear() {
         const console = $("consoleUI");
         console.innerHTML = '';
-        console.scrollTop = consoleElement.scrollHeight;
+        console.scrollTop = console.scrollHeight;
     },
     logError(error) {
         this.log(`${error.name}: ${error.message}.`);
