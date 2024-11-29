@@ -14,14 +14,14 @@
     <strong style = 'font-size:18px' class = 'white ui'>jConsole</strong>
     <div>
         <input class = 'ui' type = "file" id = "file" accept="text/javascript, text/css, text/html, text/plain">
-        <button class = 'ui' onclick ='jConsole.eval();'>Run JavaScript Code</button>
-        <button class = 'ui' id = "logger">Log Text</button>
+        <button class = 'ui' id = 'evalButton'>Run JavaScript Code</button>
+        <button class = 'ui' id = "logButton">Log Text</button>
     </div>
     <div>
 	<textarea id='input' autocorrect = 'false'></textarea>
         <textarea id = 'code'></textarea>
-        <button class = 'ui' onclick = 'jConsole.clear()'>Clear Console</button>
-        <button class = 'ui' onclick = 'request($("url").value)'>HTTP Request</button>
+        <button class = 'ui' id = 'clearButton'>Clear Console</button>
+        <button class = 'ui' id = 'requestButton'>HTTP Request</button>
         <input class = 'ui' type='url'id='url' placeholder = 'https://'autocomplete="false" autocorrect = "false">
     </div>
     <pre id = 'consoleUI'></pre>

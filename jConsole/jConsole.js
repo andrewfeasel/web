@@ -1,8 +1,20 @@
 const $ = (x) => document.getElementById(x);
 document.addEventListener("DOMContentLoaded", (event) => {
-    const logger = $("logger");
-    logger.onclick = () => {
+    const logButton = $("logButton");
+    logButton.onclick = () => {
         jConsole.log($("input").value);
+    };
+    const evalButton = $("evalButton");
+    evalButton.onclick = () => {
+        jConsole.eval($("input").value);
+    };
+    const clearButton = $("clearButton");
+    clearButton.onclick = () => {
+        jConsole.clear();
+    };
+    const requestButton = $("requestButton");
+    requestButton.onclick = () => {
+        httpRequest($("url").value);
     };
     start(); // Ensure this function is called within this block.
 });
@@ -77,7 +89,7 @@ function getProtocol(url) {
         return 'None';
     }
 }
-async function request(url){
+async function httpRequest(url){
     jConsole.log('Awaiting Response...');
     try {
         switch(getProtocol(url)){
