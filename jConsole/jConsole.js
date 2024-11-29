@@ -73,12 +73,13 @@ const jConsole = {
     logError(error) {
         this.log(`${error.name}: ${error.message}.`);
     },
-    eval() {
-        const input = $('input');
-        if (input.value === '') {
+    eval(x) {
+        const input = $(x).value;
+        if (input === '') {
             throw new ReferenceError('No code');
+        }else{
+            eval(input);
         }
-        eval(input.value);
     }
 };
 function getProtocol(url) {
