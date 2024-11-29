@@ -78,7 +78,7 @@ const jConsole = {
         if (input === '') {
             throw new ReferenceError('No code');
         }else{
-            eval(input);
+            eval(input.value);
         }
     }
 };
