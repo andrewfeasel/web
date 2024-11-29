@@ -1,23 +1,28 @@
 const $ = (x) => document.getElementById(x);
 document.addEventListener("DOMContentLoaded", (event) => {
     try{
+        alert(1);
         const input = $('input').value;
         const logButton = $("logButton");
         logButton.onclick = () => {
             jConsole.log(input);
         };
+        alert(2);
         const evalButton = $("evalButton");
         evalButton.onclick = () => {
             eval(input);
         };
+        alert(3);
         const clearButton = $("clearButton");
         clearButton.onclick = () => {
             jConsole.clear();
         };
+        alert(4);
         const requestButton = $("requestButton");
         requestButton.onclick = () => {
             httpRequest($("url").value);
         };
+        alert(5);
         const myCodeMirror = CodeMirror.fromTextArea($('code'), {
             mode: 'javascript',
             indentUnit: 4,
