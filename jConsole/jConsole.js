@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         });
         myCodeMirror.on("change", (e) =>
-            $('input').value = myCodeMirror.getValue()
+            input = myCodeMirror.getValue()
         );
         const fileInput = $('file');
         fileInput.addEventListener("change", async () => {
