@@ -1,12 +1,13 @@
 const $ = (x) => document.getElementById(x);
 document.addEventListener("DOMContentLoaded", (event) => {
+    const input = $('input').value;
     const logButton = $("logButton");
     logButton.onclick = () => {
-        jConsole.log($("input").value);
+        jConsole.log(input);
     };
     const evalButton = $("evalButton");
     evalButton.onclick = () => {
-        eval($("input").value);
+        eval(input);
     };
     const clearButton = $("clearButton");
     clearButton.onclick = () => {
