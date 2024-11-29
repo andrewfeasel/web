@@ -1,8 +1,6 @@
 const $ = (x) => document.getElementById(x);
 const logger = $("logger");
-logger.addEventListener("click", () => {
-  jConsole.log($('input').value);
-});
+logger.onclick = () => (jConsole.log($('input').value));
 function start(){
     const myCodeMirror = CodeMirror.fromTextArea($('code'), {
         mode: 'javascript',
