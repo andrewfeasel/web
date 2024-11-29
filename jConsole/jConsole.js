@@ -90,7 +90,7 @@ async function httpRequest(url){
         const response = await fetch(url);
         jConsole.log(`Response Code: ${response.status}`);
         const json = await response.json();
-        jConsole.log(json);
+        jConsole.log(JSON.stringify(json));
     } catch (e) {
         jConsole.logError(e);
     }
