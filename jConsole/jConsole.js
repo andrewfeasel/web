@@ -1,33 +1,33 @@
 const $ = (x) => document.getElementById(x);
 document.addEventListener("DOMContentLoaded", (event) => {
-    const input = $('input').value;
-    const logButton = $("logButton");
-    logButton.onclick = () => {
-        jConsole.log(input);
-    };
-    const evalButton = $("evalButton");
-    evalButton.onclick = () => {
-        eval(input);
-    };
-    const clearButton = $("clearButton");
-    clearButton.onclick = () => {
-        jConsole.clear();
-    };
-    const requestButton = $("requestButton");
-    requestButton.onclick = () => {
-        httpRequest($("url").value);
-    };
-    const myCodeMirror = CodeMirror.fromTextArea($('code'), {
-        mode: 'javascript',
-        indentUnit: 4,
-        lineNumbers: true,
-        spellcheck: false,
-        autocorrect: false,
-        autocapitalize: false,
-        indentWithTabs: true,
-        allowDropFileTypes: ['text/javascript','text/css','text/html'],
-    });
-    try {
+    try{
+        const input = $('input').value;
+        const logButton = $("logButton");
+        logButton.onclick = () => {
+            jConsole.log(input);
+        };
+        const evalButton = $("evalButton");
+        evalButton.onclick = () => {
+            eval(input);
+        };
+        const clearButton = $("clearButton");
+        clearButton.onclick = () => {
+            jConsole.clear();
+        };
+        const requestButton = $("requestButton");
+        requestButton.onclick = () => {
+            httpRequest($("url").value);
+        };
+        const myCodeMirror = CodeMirror.fromTextArea($('code'), {
+            mode: 'javascript',
+            indentUnit: 4,
+            lineNumbers: true,
+            spellcheck: false,
+            autocorrect: false,
+            autocapitalize: false,
+            indentWithTabs: true,
+            allowDropFileTypes: ['text/javascript','text/css','text/html'],
+        });
         myCodeMirror.setOption("extraKeys", {
             Tab: function(cm) {
                 const spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
