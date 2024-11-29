@@ -1,8 +1,11 @@
 const $ = (x) => document.getElementById(x);
-const logger = $("logger");
-logger.onclick = () => {
-    jConsole.log($('input').value);
-};
+document.addEventListener("DOMContentLoaded", (event) => {
+    const logger = $("logger");
+    logger.onclick = () => {
+        jConsole.log($("input").value);
+    };
+    start(); // Ensure this function is called within this block.
+});
 function start(){
     const myCodeMirror = CodeMirror.fromTextArea($('code'), {
         mode: 'javascript',
