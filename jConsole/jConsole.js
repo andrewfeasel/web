@@ -74,8 +74,8 @@ const jConsole = {
         this.log(`${error.name}: ${error.message}.`);
     },
     eval(x) {
-        const input = $(x).value;
-        if (input === '') {
+        const input = $(x);
+        if (input.value === '') {
             throw new ReferenceError('No code');
         }else{
             eval(input.value);
