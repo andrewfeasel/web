@@ -16,9 +16,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     requestButton.onclick = () => {
         httpRequest($("url").value);
     };
-    start(); // Ensure this function is called within this block.
-});
-function start(){
     const myCodeMirror = CodeMirror.fromTextArea($('code'), {
         mode: 'javascript',
         indentUnit: 4,
@@ -54,7 +51,7 @@ function start(){
     } catch (e) {
         jConsole.logError(e);
     }
-}
+});
 const jConsole = {
     log(x) {
         try {
@@ -74,11 +71,10 @@ const jConsole = {
         this.log(`${error.name}: ${error.message}.`);
     },
     eval(x) {
-        const input = $(x);
-        if (input.value === '') {
+        if (x === '') {
             throw new ReferenceError('No code');
         }else{
-            eval(input.value);
+            eval(x);
         }
     }
 };
@@ -99,7 +95,7 @@ async function httpRequest(url){
                 break;
         }
         const response = await fetch(url);
-        jConsole.log(`Response Code: ${response.status}`)
+        jConsole.log(`Response Code: ${response.status}`);
         const json = await response.json();
         jConsole.log(json);
     } catch (e) {
