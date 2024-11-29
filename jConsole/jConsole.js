@@ -55,17 +55,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
 const jConsole = {
     log(x) {
         try {
-            const console = $("consoleUI");
-            console.innerHTML += JSON.stringify(x, null, 2) + '<br>';
-            console.scrollTop = console.scrollHeight;
+            const ui = $("consoleUI");
+            ui.innerHTML += JSON.stringify(x, null, 2) + '<br>';
+            ui.scrollTop = ui.scrollHeight;
         } catch (error) {
             this.logError(error);   
         }
     },
     clear() {
-        const console = $("consoleUI");
-        console.innerHTML = '';
-        console.scrollTop = console.scrollHeight;
+        const ui = $("consoleUI");
+        ui.innerHTML = '';
+        ui.scrollTop = ui.scrollHeight;
     },
     logError(error) {
         this.log(`${error.name}: ${error.message}.`);
