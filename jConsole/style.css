@@ -11,10 +11,9 @@ body{
 #consoleUI{
     overflow:auto;
     padding: 6px;
-    width:49%;
+    width:512px;
+    height:512px;
     border: solid 1px black;
-    max-height:384px;
-    min-height:384px;
     margin:left;
     background:#FFFFFF;
     color:#000000;
