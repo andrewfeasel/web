@@ -21,6 +21,7 @@ img{
     float: left;
     background-color: white;
     color: black;
+    border: solid 1px black;
 }
 #input{
     display:none;
