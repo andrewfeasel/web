@@ -1,9 +1,6 @@
 body{
     background-color: black;
 }
-.container {
-    display: flex;
-}
 .ui{
     font-family: monospace;
     font-size: 14px;
