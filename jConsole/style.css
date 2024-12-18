@@ -15,7 +15,7 @@ body{
     overflow: auto;
     text-align: ltr;
     width: 512px;
-    height: 512px;
+    height: 50%;
     background: #FFFFFF;
     color: #000000;
 }
