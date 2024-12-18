@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>jConsole</title>
+	<link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
+    <link rel = 'stylesheet' type = 'text/css' href = 'codemirror.css'>
     <script src = 'codemirror.js'></script> 
     <script src = 'jsMode.js'></script>
     <script src = 'jConsole.js'></script>
-    <link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
-    <link rel = 'stylesheet' type = 'text/css' href = 'codemirror.css'>
 </head>
 <body>
     <a class = 'white ui' href = '../index.html'><strong>Home</strong></a>
@@ -20,7 +20,7 @@
         <button class = 'ui' id = 'requestButton'>HTTP Request</button>
         <input class = 'ui' placeholder="URL:" type='url'id='url' autocomplete="false" autocorrect = "false">
     </div>
-	<textarea id='input' autocorrect = 'false'></textarea>
+    <textarea id='input' autocorrect = 'false'></textarea>
     <textarea id = 'code'></textarea>
     <pre id = 'consoleUI'></pre>
 </body>
