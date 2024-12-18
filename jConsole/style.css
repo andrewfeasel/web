@@ -15,6 +15,7 @@ body{
     height: 512px;
     background: #FFFFFF;
     color: #000000;
+    flex-wrap: wrap;
 }
 #input{
     display:none;
