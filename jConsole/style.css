@@ -16,7 +16,7 @@ img{
 }
 #consoleUI{
     overflow: auto;
-    width: 512px;
+    width: 500px;
     height: 512px;
     float: left;
     background-color: white;
