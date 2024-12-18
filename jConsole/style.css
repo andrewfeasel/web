@@ -15,7 +15,7 @@ body{
     height: 512px;
     background: #FFFFFF;
     color: #000000;
-    margin: left;
+    display:inline;
 }
 #input{
     display:none;
@@ -24,7 +24,4 @@ body{
 }
 .white{
     color: white;
-}
-.container{
-    flex-wrap: wrap;
 }
