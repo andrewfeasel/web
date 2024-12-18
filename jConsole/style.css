@@ -1,6 +1,10 @@
 body{
     background-color: black;
 }
+.container {
+    display: flex;
+    justify-content: space-between;
+}
 .ui{
     font-family: monospace;
     font-size: 14px;
