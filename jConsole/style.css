@@ -15,10 +15,8 @@ img{
     width:88px;
 }
 #consoleUI{
-    overflow:auto;
-    padding: 6px;
+    overflow: auto;
     width: 512px;
-    border: solid 1px black;
     height: 512px;
     margin: left;
     background-color: white;
