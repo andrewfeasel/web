@@ -22,6 +22,8 @@ body{
 }
 #input{
     display:none;
+    height:0px;
+    width:0px;
 }
 .white{
     color: white;
