@@ -10,7 +10,6 @@ body{
 }
 #consoleUI{
     overflow:auto;
-    padding: 6px;
     width:512px;
     height:512px;
     border: solid 1px black;
