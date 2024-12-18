@@ -3,7 +3,6 @@ body{
 }
 .container {
     display: flex;
-    justify-content: space-between;
 }
 .ui{
     font-family: monospace;
