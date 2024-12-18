@@ -15,7 +15,7 @@ body{
     height: 512px;
     background: #FFFFFF;
     color: #000000;
-    margin:auto;
+    margin: left;
 }
 #input{
     display:none;
