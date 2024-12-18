@@ -43,23 +43,12 @@ const request = async (url) => {
     }
 }
 document.addEventListener("DOMContentLoaded", (event) => {
-    try{
+    try {
         const logButton = $("logButton");
-        logButton.onclick = () => {
-            jConsole.log($('input').value);
-        };
         const evalButton = $("evalButton");
-        evalButton.onclick = () => {
-            eval($('input').value);
-        };
         const clearButton = $("clearButton");
-        clearButton.onclick = () => {
-            jConsole.clear();
-        };
         const requestButton = $("requestButton");
-        requestButton.onclick = () => {
-            request($("url").value);
-        };
+        const fileInput = $('file');
         const myCodeMirror = CodeMirror.fromTextArea($('code'), {
             mode: 'javascript',
             indentUnit: 4,
@@ -76,10 +65,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 cm.replaceSelection(spaces);
             }
         });
-        myCodeMirror.on("change", (e) =>
-            $('input').value = myCodeMirror.getValue()
+        myCodeMirror.on("change", (e) => 
+            $('input').value = myCodeMirror.getValue();
         );
-        const fileInput = $('file');
+        logButton.onclick = () => { jConsole.log($('input').value); }
+        evalButton.onclick = () => { eval($('input').value); }
+        clearButton.onclick = () => { jConsole.clear(); }
+        requestButton.onclick = () => { request($("url").value) }
         fileInput.addEventListener("change", async () => {
             const [file] = fileInput.files;
             if (file) {
