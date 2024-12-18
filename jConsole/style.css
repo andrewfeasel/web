@@ -2,10 +2,10 @@ body{
     background-color: black;
 }
 img{
-    max-height:512px;
-    max-width:512px;
-    min-width:256px;
-    min-height:256px;
+    max-height: 512px;
+    max-width: 512px;
+    min-width: 256px;
+    min-height: 256px;
 }
 .ui{
     font-family: monospace;
@@ -21,8 +21,8 @@ img{
     border: solid 1px black;
     height: 512px;
     margin: left;
-    background: #FFFFFF;
-    color: #000000;
+    background-color: white;
+    color: black;
 }
 #input{
     display:none;
