@@ -11,7 +11,7 @@ body{
 #consoleUI{
     overflow:auto;
     padding: 6px;
-    width:99%;
+    width:49%;
     border: solid 1px black;
     max-height:384px;
     min-height:384px;
