@@ -24,3 +24,6 @@ body{
 .white{
     color: white;
 }
+.container{
+    flex-wrap: wrap;
+}
