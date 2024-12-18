@@ -6,6 +6,7 @@
   height: 512px;
   width: 512px;
   color: black;
+  overflow:auto;
   direction: ltr;
 }
 
