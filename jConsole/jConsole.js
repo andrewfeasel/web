@@ -49,7 +49,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const clearButton = $("clearButton");
         const requestButton = $("requestButton");
         const fileInput = $('file');
-        const myCodeMirror = CodeMirror.fromTextArea($('code'), {
+        const code = $('code');
+        const myCodeMirror = CodeMirror.fromTextArea(code, {
             mode: 'javascript',
             indentUnit: 4,
             lineNumbers: true,
