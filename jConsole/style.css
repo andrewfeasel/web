@@ -18,7 +18,7 @@ img{
     overflow: auto;
     width: 512px;
     height: 512px;
-    align: left;
+    float: left;
     background-color: white;
     color: black;
 }
