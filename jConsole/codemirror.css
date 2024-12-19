@@ -5,7 +5,7 @@
   font-family: monospace;
   height: 256px;
   width: 80%;
-  color: white;
+  color: black;
   direction: ltr;
 }
 
@@ -153,7 +153,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}
 .CodeMirror {
   position: relative;
   overflow: hidden;
-  background: black;
+  background: white;
 }
 
 .CodeMirror-scroll {
