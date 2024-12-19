@@ -42,6 +42,8 @@ const request = async (url) => {
         jConsole.logError(e);
     }
 };
+const observer = lozad();
+observer.observe();
 document.addEventListener("DOMContentLoaded", (event) => {
     try {
         const logButton = $("logButton");
