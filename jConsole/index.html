@@ -1,32 +1,32 @@
 <!doctype html>
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jConsole</title>
-	<link rel = 'stylesheet' type = 'text/css' href = '../bootstrap.min.css'>
-    <link rel = 'stylesheet' type = 'text/css' href = 'codemirror.css'>
-	<link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
-	<script src = '../bootstrap.min.js'></script> 
-    <script src = 'codemirror.js'></script> 
-    <script src = 'jsMode.js'></script>
-    <script src = 'jConsole.js'></script>
-</head>
-<body>
-    <a href = '../index.html'><strong>Home</strong></a>
-    <br>
-    <strong style = 'font-size:18px' class = 'ui'>jConsole</strong>
-    <div>
-        <input type = "file" id = "file" accept="text/javascript, text/css, text/html, text/plain">
-        <button id = 'evalButton'>Run JavaScript Code</button>
-        <button id = "logButton">Log Text</button>
-	<button id = 'clearButton'>Clear Console</button>
-        <button id = 'requestButton'>HTTP Request</button>
-        <input placeholder="URL:" type='url'id='url' autocomplete="false" autocorrect = "false">
-    </div>
-	<div>
-    	<textarea id = 'input' autocorrect = 'false'></textarea>
-    	<textarea id = 'code'></textarea>
-	<pre id = 'consoleUI'></pre>
-	</div>
-</body>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>jConsole</title>
+    	<link rel = 'stylesheet' type = 'text/css' href = 'codemirror.css'>
+		<link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
+		<link rel = 'stylesheet' type = 'text/css' href = '../bootstrap.min.css'>
+		<script src = '../bootstrap.min.js'></script> 
+    	<script src = 'codemirror.js'></script> 
+    	<script src = 'jsMode.js'></script>
+    	<script src = 'jConsole.js'></script>
+	</head>
+	<body>
+    	<a href = '../index.html'><strong>Home</strong></a>
+    	<br>
+    	<strong style = 'font-size:18px' class = 'ui'>jConsole</strong>
+    	<div>
+        	<input type = "file" id = "file" accept="text/javascript, text/css, text/html, text/plain">
+        	<button id = 'evalButton'>Run JavaScript Code</button>
+        	<button id = "logButton">Log Text</button>
+			<button id = 'clearButton'>Clear Console</button>
+        	<button id = 'requestButton'>HTTP Request</button>
+        	<input placeholder="URL:" type='url'id='url' autocomplete="false" autocorrect = "false">
+    	</div>
+		<div>
+    		<textarea id = 'input' autocorrect = 'false'></textarea>
+    		<textarea id = 'code'></textarea>
+			<pre id = 'consoleUI'></pre>
+		</div>
+	</body>
 </html>
