@@ -2,9 +2,8 @@
     overflow: auto;
     width: 80%;
     height: 256px;
-    background-color: white;
-    color: black;
-    border: solid black 1px;
+    background-color: black;
+    color: white;
 }
 #input{
     display:none;
