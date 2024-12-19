@@ -1,1 +1,8 @@
-
+body {
+    background-color: #eef1ff;
+    font-family: Verdana;
+    font-size: 14px;
+}
+a {
+    color: blue;
+}
