@@ -1,5 +1,5 @@
 body{
-    background-color:light blue;
+    background-color: #d0bdf4;
     font-family:monospace;
     font-size: 14px;
 }
@@ -13,9 +13,9 @@ img{
     overflow: auto;
     width: 99%;
     height: 256px;
-    background-color: white;
-    color: black;
-    border: solid black 1px;
+    background-color: #a28089;
+    color: #e5eaf5;
+    border: solid #a0d2eb 1px;
 }
 #input{
     display:none;
