@@ -1,12 +1,12 @@
+body{
+    font-family:monospace;
+    font-size: 14px;
+}
 img{
     max-height: 512px;
     max-width: 512px;
     min-width: 256px;
     min-height: 256px;
-}
-.ui{
-    font-family: monospace;
-    font-size: 14px;
 }
 #consoleUI{
     overflow: auto;
