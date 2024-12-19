@@ -13,9 +13,8 @@ img{
     overflow: auto;
     width: 99%;
     height: 256px;
-    background-color: #a28089;
-    color: #e5eaf5;
-    border: solid #a0d2eb 1px;
+    background-color: white;
+    color: black;
 }
 #input{
     display:none;
