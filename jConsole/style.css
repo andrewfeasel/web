@@ -4,6 +4,7 @@
     height: 256px;
     background-color: white;
     color: black;
+    border: solid black 1px;
 }
 #input{
     display:none;
