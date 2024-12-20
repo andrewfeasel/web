@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             autocorrect: false,
             autocapitalize: false,
             indentWithTabs: true,
-            allowDropFileTypes: ['text/javascript','text/css','text/html']
+            allowDropFileTypes: ['text/javascript','text/css','text/html','application/json']
         });
         myCodeMirror.setOption("extraKeys", {
             Tab: function(cm) {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 eval($('input').value);
             }
             catch(error){
-                jConsole.logError(error);
+                throw new Error(error);
             }
         };
         clearButton.onclick = () => {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     const textContent = await file.text();
                     myCodeMirror.setValue(textContent);
                 } catch (error) {
-                    jConsole.logError(error);
+                    throw new Error(error);
                 }
             }
         });
