@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 eval($('input').value);
             }
             catch(error){
-                throw new Error(error.name);
+                throw new Error(error);
             }
         };
         clearButton.onclick = () => {
