@@ -27,7 +27,6 @@ const getProtocol = (url) => {
     }
 };
 const request = async (url) => {
-    jConsole.log('Awaiting Response...');
     try {
         switch(getProtocol(url)){
             case 'None':
@@ -35,11 +34,13 @@ const request = async (url) => {
                 break;
         }
         const response = await fetch(url);
-        jConsole.log(`Response Code: ${response.status}`);
+        if(!response.ok){
+            throw new Error(response.status);
+        }
         const json = await response.json();
-        jConsole.log(json);
+        return json;
     } catch (e) {
-        jConsole.logError(e);
+        jConsole.log(e.message);
     }
 };
 const observer = lozad();
