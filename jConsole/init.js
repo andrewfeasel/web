@@ -15,7 +15,7 @@ const jConsole = {
         ui.scrollTop = ui.scrollHeight;
     },
     logError(error) {
-        this.log(`${error.name}: ${error.message}.`);
+        this.log(`${error.name} ${error.message} ${error.stack}`);
     }
 };
 observer.observe();
