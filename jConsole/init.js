@@ -18,13 +18,9 @@ const jConsole = {
         this.log(`${error.name}: ${error.message}.`);
     }
 };
-let hasConnection = true;
 const request = async (url) => {
     try {
-        if(!hasConnection){
-            throw new Error('Internet Required for HTTP Requests');
-        }
-        if(!url.match(/^https:/)){
+        if(!url.match(/^https?:/)){
             url = 'https://' + url;
         }
         const response = await fetch(url);
@@ -39,12 +35,3 @@ const request = async (url) => {
 };
 const observer = lozad();
 observer.observe();
-window.addEventListener("offline", (e) => {
-    jConsole.log('OFFLINE');
-    hasConnection = false;
-});
-
-window.addEventListener("online", (e) => {
-    jConsole.log('ONLINE');
-    hasConnection = false;
-});
