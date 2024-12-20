@@ -18,4 +18,5 @@ const jConsole = {
         this.log(`${error.name} ${error.message} ${error.stack}`);
     }
 };
+const observer = lozad();
 observer.observe();
