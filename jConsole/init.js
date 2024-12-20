@@ -18,20 +18,14 @@ const jConsole = {
         this.log(`${error.name}: ${error.message}.`);
     }
 };
-const getProtocol = (url) => {
-    let proto = url.match(/^([A-Za-z]+):/);
-    if (proto) {
-        return proto[1].toLowerCase();
-    } else {
-        return 'None';
-    }
-};
+let hasConnection = true;
 const request = async (url) => {
     try {
-        switch(getProtocol(url)){
-            case 'None':
-                url = 'https://' + url;
-                break;
+        if(!hasConnection){
+            throw new Error('Internet Required for HTTP Requests');
+        }
+        if(!url.match(/^https:/)){
+            url = 'https://' + url;
         }
         const response = await fetch(url);
         if(!response.ok){
@@ -45,3 +39,12 @@ const request = async (url) => {
 };
 const observer = lozad();
 observer.observe();
+window.addEventListener("offline", (e) => {
+    jConsole.log('OFFLINE');
+    hasConnection = false;
+});
+
+window.addEventListener("online", (e) => {
+    jConsole.log('ONLINE');
+    hasConnection = false;
+});
