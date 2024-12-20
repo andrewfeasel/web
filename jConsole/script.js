@@ -1,10 +1,3 @@
-window.addEventListener("offline", (e) => {
-    jConsole.log('OFFLINE');
-});
-
-window.addEventListener("online", (e) => {
-    jConsole.log('ONLINE');
-});
 document.addEventListener("DOMContentLoaded", (event) => {
     try {
         const logButton = $("logButton");
