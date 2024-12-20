@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
             try{
                 eval($('input').value);
             }
-            catch(error){
-                throw new Error(error);
+            catch(error) {
+                jConsole.logError(error);
             }
         };
         clearButton.onclick = () => {
