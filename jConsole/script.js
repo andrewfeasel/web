@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     try {
-        const logButton = $("logButton");
         const evalButton = $("evalButton");
         const clearButton = $("clearButton");
-        const requestButton = $("requestButton");
         const fileInput = $('file');
         const code = $('code');
         const myCodeMirror = CodeMirror.fromTextArea(code, {
@@ -25,18 +23,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         myCodeMirror.on("change", (e) => {
             $('input').value = myCodeMirror.getValue();
         });
-        logButton.onclick = () => {
-            jConsole.log($('input').value);
-        };
         evalButton.onclick = () => {
             eval($('input').value);
         };
         clearButton.onclick = () => {
             jConsole.clear();
-        };
-        requestButton.onclick = async () => {
-            let response = await request($("url").value);
-            jConsole.log(response);
         };
         fileInput.addEventListener("change", async () => {
             const [file] = fileInput.files;
