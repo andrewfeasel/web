@@ -18,20 +18,4 @@ const jConsole = {
         this.log(`${error.name}: ${error.message}.`);
     }
 };
-const request = async (url) => {
-    try {
-        if(!url.match(/^https?:/)){
-            url = 'https://' + url;
-        }
-        const response = await fetch(url);
-        if(!response.ok){
-            throw new Error(response.status);
-        }
-        const json = await response.json();
-        return json;
-    } catch (e) {
-        jConsole.log(e.message);
-    }
-};
-const observer = lozad();
 observer.observe();
