@@ -34,8 +34,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         clearButton.onclick = () => {
             jConsole.clear();
         };
-        requestButton.onclick = () => {
-            request($("url").value);
+        requestButton.onclick = async () => {
+            let response = await request($("url").value);
+            jConsole.log(response);
         };
         fileInput.addEventListener("change", async () => {
             const [file] = fileInput.files;
