@@ -24,7 +24,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
             $('input').value = myCodeMirror.getValue();
         });
         evalButton.onclick = () => {
-            eval($('input').value);
+            try{
+                eval($('input').value);
+            }
+            catch(error){
+                jConsole.logError(error);
+            }
         };
         clearButton.onclick = () => {
             jConsole.clear();
