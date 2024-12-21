@@ -1,11 +1,11 @@
 window.addEventListener('error', (event) => {
-  jConsole.log(`${error.name} ${error.message} ${error.stack}`);
+    jConsole.log(`${error.name} ${error.message} ${error.stack}`);
 });
 document.addEventListener("DOMContentLoaded", (event) => {
     const evalButton = $("evalButton");
     const clearButton = $("clearButton");
     const fileInput = $('file');
-    fileInput.accept = 'text/javascript, text/css, text/html, application/json';
+    fileInput.accept = 'text/javascript, application/json';
     const code = $('code');
     window.addEventListener('offline', (event) => {
         jConsole.log("offline");
