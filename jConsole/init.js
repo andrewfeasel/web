@@ -11,5 +11,3 @@ const jConsole = {
         ui.scrollTop = ui.scrollHeight;
     }
 };
-const observer = lozad();
-observer.observe();
