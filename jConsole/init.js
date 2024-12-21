@@ -1,13 +1,9 @@
 const $ = (x) => document.getElementById(x);
 const jConsole = {
     log(x) {
-        try {
-            const ui = $("consoleUI");
-            ui.innerHTML += x + '<br>';
-            ui.scrollTop = ui.scrollHeight;
-        } catch (error) {
-            this.logError(error);
-        }
+        const ui = $("consoleUI");
+        ui.innerHTML += `${x}<br>`;
+        ui.scrollTop = ui.scrollHeight;
     },
     clear() {
         const ui = $("consoleUI");
