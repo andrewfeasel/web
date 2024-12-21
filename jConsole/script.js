@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 eval($('input').value);
             }
             catch(error) {
-                jConsole.logError(error);
+                jConsole.log(`${error.name} ${error.message}`);
             }
         };
         clearButton.onclick = () => {
