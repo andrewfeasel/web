@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         jConsole.log("offline");
     });
     window.addEventListener('online', (event) => {
-        jConsole.log("online");
+        jConsole.log(`online`);
     });
     const myCodeMirror = CodeMirror.fromTextArea(code, {
         mode: 'javascript',
