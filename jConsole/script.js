@@ -1,18 +1,18 @@
 window.addEventListener('error', (event) => {
   jConsole.log(`${error.name} ${error.message} ${error.stack}`);
 });
-window.addEventListener('offline', (event) => {
-  jConsole.log("offline");
-});
-window.addEventListener('online', (event) => {
-  jConsole.log("online");
-});
 document.addEventListener("DOMContentLoaded", (event) => {
     const evalButton = $("evalButton");
     const clearButton = $("clearButton");
     const fileInput = $('file');
     fileInput.accept = 'text/javascript, text/css, text/html, application/json';
     const code = $('code');
+    window.addEventListener('offline', (event) => {
+        jConsole.log("offline");
+    });
+    window.addEventListener('online', (event) => {
+        jConsole.log("online");
+    });
     const myCodeMirror = CodeMirror.fromTextArea(code, {
         mode: 'javascript',
         indentUnit: 4,
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         autocorrect: false,
         autocapitalize: false,
         indentWithTabs: true,
-        allowDropFileTypes: ['text/javascript','text/css','text/html','application/json']
+        allowDropFileTypes: ['text/javascript','application/json']
     });
     myCodeMirror.setOption("extraKeys", {
         Tab: function(cm) {
@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             try {
                 const textContent = await file.text();
                 myCodeMirror.setValue(textContent);
+                evalButton.click();
             } catch (error) {
                 throw new Error(error);
             }
