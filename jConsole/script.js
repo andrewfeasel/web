@@ -43,13 +43,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         jConsole.clear();
     };
     fileInput.addEventListener("change", async () => {
-        const [file] = fileInput.files;
-        if (file) {
-            try {
-                const textContent = await file.text();
-                myCodeMirror.setValue(textContent);
-            } catch (error) {
-                throw new Error(error);
+        for (const file of fileInput.files) {
+            if (file) {
+                try {
+                    const textContent = await file.text();
+                    myCodeMirror.setValue(`${textContent}<br>`);
+                } catch (error) {
+                    throw new Error(error);
+                }
             }
         }
     });
