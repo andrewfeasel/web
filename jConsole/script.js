@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             try {
                 const textContent = await file.text();
                 myCodeMirror.setValue(textContent);
-                evalButton.click();
             } catch (error) {
                 throw new Error(error);
             }
