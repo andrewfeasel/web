@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     fileInput.accept = 'text/javascript, application/json';
     const code = $('code');
     window.addEventListener('offline', (event) => {
-        $('offline').className = '';
+        jConsole.log('offline');
     });
     window.addEventListener('online', (event) => {
-        $('offline').className = 'hidden';
+        jConsole.log('online');
     });
     const myCodeMirror = CodeMirror.fromTextArea(code, {
         mode: 'javascript',
