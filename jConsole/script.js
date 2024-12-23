@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     evalButton.onclick = () => {
         try{
-            eval($('input').value);
+            let output = eval($('input').value);
+            jConsole.log(JSON.stringify(output,null,2));
         } catch(error) {
             jConsole.log(`${error.name} ${error.message}`);
         }
