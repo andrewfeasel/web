@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     evalButton.onclick = () => {
         try{
-            let output = () => {
-               return eval($('input').value);
+            let output = eval($('input').value);
+            if(typeof output !== 'undefined'){
+                jConsole.log(JSON.stringify(output,null,2));
             }
-            jConsole.log(JSON.stringify(output(),null,2));
         } catch(error) {
             jConsole.log(`${error.name} ${error.message}`);
         }
