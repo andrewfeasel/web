@@ -1,5 +1,6 @@
-window.addEventListener('error', (event) => {
-    jConsole.log(`${error.name} ${error.message} ${error.stack}`);
+'use strict';
+window.addEventListener('error', (error) => {
+    log(`${error.name} ${error.message}`);
 });
 document.addEventListener("DOMContentLoaded", (event) => {
     const evalButton = $("evalButton");
@@ -8,10 +9,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     fileInput.accept = 'text/javascript, application/json';
     const code = $('code');
     window.addEventListener('offline', (event) => {
-        jConsole.log('offline');
+        log('offline');
     });
     window.addEventListener('online', (event) => {
-        jConsole.log('online');
+        log('online');
     });
     const myCodeMirror = CodeMirror.fromTextArea(code, {
         mode: 'javascript',
@@ -20,7 +21,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         spellcheck: false,
         autocorrect: false,
         autocapitalize: false,
-        indentWithTabs: true,
         allowDropFileTypes: ['text/javascript','application/json']
     });
     myCodeMirror.setOption("extraKeys", {
@@ -33,27 +33,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
         $('input').value = myCodeMirror.getValue();
     });
     evalButton.onclick = () => {
-        try{
-            let output = eval($('input').value);
-            if(output !== undefined){
-                jConsole.log(JSON.stringify(output,null,2));
-            }
-        } catch(error) {
-            jConsole.log(`${error.name} ${error.message}`);
+        try {
+            eval($('input').value);
+        } catch (error) {
+            throw error;
         }
     };
     clearButton.onclick = () => {
-        jConsole.clear();
+        myCodeMirror.setValue('');
+        clear();
     };
     fileInput.addEventListener("change", async () => {
         let textContent;
-        for (const file of fileInput.files) {
-            try {
-                textContent += await file.text();
-            } catch (error) {
-                throw new Error(error);
+        for await (const file of fileInput.files) {
+            if (!file) {
+                break;
             }
+            textContent += await file.text();
         }
-        myCodeMirror.setValue(`${textContent}`);
+        textContent = textContent.replace(/^undefined/,'');
+        myCodeMirror.setValue(textContent);
     });
 });
