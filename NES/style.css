@@ -1,0 +1,30 @@
+body {
+  font-family: monospace;
+  text-align: center;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+}
+
+#log {
+  font-family: monospace;
+  max-height: 50px;
+  min-height: 50px;
+  overflow: scroll;
+  text-align: left;
+  width: 512px;
+  margin: auto;
+  border: 1px solid #000000;
+  padding: 5px;
+  background: #FFFFFF;
+  color: #000000;
+}
+
+#output {
+  width: 512px;
+  height: 384px;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
